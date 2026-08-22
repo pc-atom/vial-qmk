@@ -380,3 +380,11 @@ bool led_update_user(led_t led_state) {
     }
     return true;
 }
+bool led_update_user(led_t led_state) {
+    if (led_state.caps_lock) {
+        writePinLow(GP25);
+    } else {
+        writePinHigh(GP25);
+    }
+    return true;
+}
